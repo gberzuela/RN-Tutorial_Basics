@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import Header from './components/Header';
+import TodoItem from './components/TodoItem';
 
 const App = () => {
 	const [todos, setTodos] = useState([
@@ -10,6 +11,10 @@ const App = () => {
 		{ text: 'create an app', key: '2' },
 		{ text: 'play bideo bames', key: '3' },
 	]);
+
+	const handlePress = (key) => {
+		setTodos((prevTodos) => todos.filter((todo) => todo.key !== key));
+	};
 
 	return (
 		<View style={styles.container}>
@@ -19,7 +24,9 @@ const App = () => {
 				<View style={styles.list}>
 					<FlatList
 						data={todos}
-						renderItem={({ item }) => <Text>{item.text}</Text>}
+						renderItem={({ item }) => (
+							<TodoItem item={item} handlePress={handlePress} />
+						)}
 					/>
 				</View>
 			</View>
