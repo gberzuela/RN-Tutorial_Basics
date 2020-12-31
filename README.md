@@ -12,3 +12,4 @@ A repo to follow along The Net Ninja's React Native tutorial on YouTube. Each co
 - React Native's Alert object
 - TouchableWithoutFeedback used to wrap our entire app in a clickable component along with the Keyboard object to dismiss the keyboard when tapping anywhere on the screen
 - Flexbox in React Native
+- How to use @expo/vector-icons to display images from different packages
