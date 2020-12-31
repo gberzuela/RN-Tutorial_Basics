@@ -1,8 +1,9 @@
 # RN-Tutorial_Basics
 
-A repo to follow along The Net Ninja's React Native tutorial on YouTube. Each commit will be a different video/lesson:
+- Todo mobile app built in React Native.
+- A repo to follow along The Net Ninja's React Native tutorial on YouTube. Each commit will be a different video/lesson:
 
-[Playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ)
+[Playlist: Basics and Todos guide are videos 1-15](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ)
 
 ## What I learned:
 
