@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert } from 'react-native';
 
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
@@ -14,11 +14,16 @@ const App = () => {
 	]);
 
 	const handlePress = (key) => {
-		setTodos((prevTodos) => todos.filter((todo) => todo.key !== key));
+		setTodos((prevTodos) => prevTodos.filter((todo) => todo.key !== key));
 	};
 
 	const handleSubmit = (text) => {
-		setTodos([{ text, key: `${todos.length + 1}` }, ...todos]);
+		// Alert.alert(title, message, array of buttons)
+		text.length > 3
+			? setTodos([{ text, key: `${todos.length + 1}` }, ...todos])
+			: Alert.alert('OOPS!', 'Task much be over 3 character!', [
+					{ text: 'Understood', onPress: () => console.log('alert closed') },
+			  ]);
 	};
 
 	return (
