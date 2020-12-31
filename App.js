@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
+import AddTodo from './components/AddTodo';
 
 const App = () => {
 	const [todos, setTodos] = useState([
@@ -16,11 +17,15 @@ const App = () => {
 		setTodos((prevTodos) => todos.filter((todo) => todo.key !== key));
 	};
 
+	const handleSubmit = (text) => {
+		setTodos([{ text, key: `${todos.length + 1}` }, ...todos]);
+	};
+
 	return (
 		<View style={styles.container}>
 			<Header />
 			<View style={styles.content}>
-				{/* todo form */}
+				<AddTodo handleSubmit={handleSubmit} />
 				<View style={styles.list}>
 					<FlatList
 						data={todos}
